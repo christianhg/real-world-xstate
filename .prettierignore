@@ -1,1 +1,3 @@
 *.typegen.ts
+dist
+.vercel
