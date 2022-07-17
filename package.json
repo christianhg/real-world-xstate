@@ -5,7 +5,7 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
-		"build": "npm run format:check && tsc && vite build",
+		"build": "tsc && vite build",
 		"preview": "vite preview",
 		"format": "prettier --write .",
 		"format:check": "prettier --check ."
