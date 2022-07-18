@@ -3,26 +3,21 @@
 export interface Typegen0 {
 	'@@xstate/typegen': true;
 	eventsCausingActions: {
-		'show notification': 'process complete';
+		'on complete': 'xstate.init';
 	};
 	internalEvents: {
 		'xstate.init': { type: 'xstate.init' };
 	};
 	invokeSrcNameMap: {};
 	missingImplementations: {
-		actions: 'show notification';
+		actions: 'on complete';
 		services: never;
 		guards: never;
 		delays: never;
 	};
 	eventsCausingServices: {};
-	eventsCausingGuards: {
-		'process is hidden': 'process complete';
-	};
+	eventsCausingGuards: {};
 	eventsCausingDelays: {};
-	matchesStates:
-		| 'notification pending'
-		| 'notification shown'
-		| 'notification not shown';
+	matchesStates: 'running' | 'completed';
 	tags: never;
 }

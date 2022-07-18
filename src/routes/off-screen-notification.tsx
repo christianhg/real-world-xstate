@@ -1,12 +1,11 @@
-import { useInterpret } from '@xstate/react';
-import { useRef, useState } from 'react';
+import { useInterpret, useMachine } from '@xstate/react';
+import { useRef } from 'react';
 import { ActorRefFrom, assign, createMachine, spawn } from 'xstate';
+import { processMachine } from '../machines/process.machine';
 import { visibilityMachine } from '../machines/visibility.machine';
 
 export default function OffScreenNotification() {
-	const [processComplete, setProcessComplete] = useState(false);
 	const processRef = useRef(null);
-
 	const notification = useInterpret(
 		() =>
 			notificationMachine.withContext({ element: () => processRef.current }),
@@ -18,6 +17,14 @@ export default function OffScreenNotification() {
 			},
 		},
 	);
+	const [process] = useMachine(processMachine, {
+		actions: {
+			'on complete': () => {
+				notification.send('process complete');
+			},
+		},
+	});
+	const processComplete = process.matches('completed');
 
 	return (
 		<main style={{ padding: '1rem 0' }}>
@@ -25,7 +32,6 @@ export default function OffScreenNotification() {
 				<button
 					disabled={processComplete}
 					onClick={() => {
-						setProcessComplete(true);
 						notification.send('process complete');
 					}}
 				>
