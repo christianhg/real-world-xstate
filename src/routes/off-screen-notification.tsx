@@ -27,16 +27,12 @@ export default function OffScreenNotification() {
 	const processComplete = process.matches('completed');
 
 	return (
-		<main style={{ padding: '1rem 0' }}>
+		<main>
 			<section>
-				<button
-					disabled={processComplete}
-					onClick={() => {
-						notification.send('process complete');
-					}}
-				>
-					Complete process
-				</button>
+				<p>
+					Scroll down to see process loading (potentially) off-screen. If it
+					finishes off-screen, a notification is shown.
+				</p>
 			</section>
 			<section>
 				<div
