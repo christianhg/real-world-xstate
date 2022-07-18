@@ -1,8 +1,8 @@
 import { useInterpret, useMachine } from '@xstate/react';
 import { useRef } from 'react';
 import { ActorRefFrom, assign, createMachine, spawn } from 'xstate';
-import { processMachine } from '../machines/process.machine';
-import { visibilityMachine } from '../machines/visibility.machine';
+import { processMachine } from '../generic-machines/process.machine';
+import { visibilityMachine } from '../generic-machines/visibility.machine';
 
 export default function OffScreenNotification() {
 	const processRef = useRef(null);
