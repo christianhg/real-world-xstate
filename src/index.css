@@ -15,10 +15,6 @@
 	-webkit-text-size-adjust: 100%;
 }
 
-* {
-	margin: 0;
-}
-
 a {
 	font-weight: 500;
 	color: #646cff;
@@ -81,18 +77,23 @@ section {
 	border: 1px dashed rgb(220, 220, 220);
 	min-height: 75vh;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
 
 .process {
-	background-color: rebeccapurple;
+	background-color: chocolate;
 	width: 200px;
 	height: 200px;
 	display: flex;
 	color: white;
 	justify-content: center;
 	align-items: center;
+}
+
+.process.loading {
+	background-color: rebeccapurple;
 }
 
 .process.complete {

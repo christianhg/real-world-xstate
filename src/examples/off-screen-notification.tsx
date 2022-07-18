@@ -17,29 +17,35 @@ export default function OffScreenNotification() {
 			},
 		},
 	);
-	const [process] = useMachine(processMachine, {
+	const [process, send] = useMachine(processMachine, {
 		actions: {
 			'on complete': () => {
 				notification.send('process complete');
 			},
 		},
 	});
-	const processComplete = process.matches('completed');
 
 	return (
 		<main>
 			<section>
 				<p>
-					Scroll down to see process loading (potentially) off-screen. If it
-					finishes off-screen, a notification is shown.
+					Scroll down to see the "process". If it finishes off-screen, a
+					notification is shown.
+				</p>
+				<p>
+					<button
+						disabled={!process.matches('idle')}
+						onClick={() => {
+							send({ type: 'start' });
+						}}
+					>
+						Start process
+					</button>
 				</p>
 			</section>
 			<section>
-				<div
-					ref={processRef}
-					className={`process ${processComplete ? 'complete' : ''}`}
-				>
-					{processComplete ? 'Complete' : 'Loading...'}
+				<div ref={processRef} className={`process ${process.value}`}>
+					Process: {process.value.toString().toUpperCase()}
 				</div>
 			</section>
 			<section>...</section>

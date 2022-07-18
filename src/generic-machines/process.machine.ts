@@ -3,17 +3,24 @@ import { createMachine } from 'xstate';
 export const processMachine = createMachine({
 	id: 'process',
 	tsTypes: {} as import('./process.machine.typegen').Typegen0,
-	initial: 'running',
+	initial: 'idle',
 	states: {
-		running: {
+		idle: {
+			on: {
+				start: {
+					target: 'loading',
+				},
+			},
+		},
+		loading: {
 			after: [
 				{
 					delay: 5000,
-					target: 'completed',
+					target: 'complete',
 				},
 			],
 		},
-		completed: {
+		complete: {
 			entry: 'on complete',
 			type: 'final',
 		},
