@@ -1,8 +1,10 @@
 # Real-World XState
 
-A collection of real-world problems, and how you can solve them with [XState](https://xstate.js.org/).
+A collection of real-world problems and how you can solve them with [XState](https://xstate.js.org/).
 
 Feel free to contribute with examples ❤️
+
+The examples don't have to be copy/paste from an existing project. In fact, they should probably be distilled to a proof of concept/demo version. The main purpose is to share knowledge and experiences with orchestrating logic using state machines and statecharts.
 
 ## Examples
 
