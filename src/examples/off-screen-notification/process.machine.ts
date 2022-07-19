@@ -2,7 +2,7 @@ import { createMachine } from 'xstate';
 
 export const processMachine = createMachine({
 	id: 'process',
-	tsTypes: {} as import('./process.machine.typegen').Typegen0,
+	tsTypes: {} as import("./process.machine.typegen").Typegen0,
 	initial: 'idle',
 	states: {
 		idle: {
