@@ -9,7 +9,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 		<BrowserRouter>
 			<Routes>
 				<Route
-					path="off-screen-notification"
+					path="examples/off-screen-notification"
 					element={<OffScreenNotification />}
 				/>
 			</Routes>
