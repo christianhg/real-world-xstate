@@ -12,3 +12,9 @@ On a page with a long-running process, we needed to show a notification to the u
 
 - 🧶 **Src**: [./src/examples/off-screen-notification](./src/examples/off-screen-notification)
 - 🕹️ **Demo**: https://real-world-xstate.vercel.app/examples/off-screen-notification
+
+## To-do
+
+- [ ] Add more examples
+- [ ] Scope the CSS for each example
+- [ ] Create minimal landing page
