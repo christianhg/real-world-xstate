@@ -2,6 +2,8 @@
 
 A collection of real-world problems, and how you can solve them with [XState](https://xstate.js.org/).
 
+Feel free to contribute with examples ❤️
+
 ## Examples
 
 ### 🔔 Off-Screen Notification
