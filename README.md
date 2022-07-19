@@ -10,7 +10,7 @@ The examples don't have to be copy/paste from an existing project. In fact, they
 
 ### 🔔 Off-Screen Notification
 
-On a page with a long-running process, we needed to show a notification to the user if the process finished off-screen. The result is a statechart that gets notified of the completion of the process as well as its visibility.
+On a page with a long-running process, we needed to show a notification to the user if the process finished off-screen. The result is a statechart that gets notified of the completion of the process as well as its visibility. The visibility is tracked using a spawned child machine that invokes an `IntersectionObserver`.
 
 - 🧶 **Src**: [./src/examples/off-screen-notification](./src/examples/off-screen-notification)
 - 🕹️ **Demo**: https://real-world-xstate.vercel.app/examples/off-screen-notification
