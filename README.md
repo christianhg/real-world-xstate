@@ -6,6 +6,8 @@ Feel free to contribute with examples ❤️
 
 The examples don't have to be copy/paste from an existing project. In fact, they should probably be distilled to a proof of concept/demo version. The main purpose is to share knowledge and experiences with orchestrating logic using state machines and statecharts.
 
+You might also be interested in [xstate-catalogue.com](https://xstate-catalogue.com/) for a more official and generic collection of examples.
+
 ## Examples
 
 ### 🔔 Off-Screen Notification
