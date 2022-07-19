@@ -4,9 +4,9 @@ A collection of real-world problems, and how you can solve them with [XState](ht
 
 ## Examples
 
-### Off-Screen Notification
+### 🔔 Off-Screen Notification
 
-On a page with a long-running process, we needed to show a notification to the user if the process finished off-screen.
+On a page with a long-running process, we needed to show a notification to the user if the process finished off-screen. The result is a statechart that gets notified of the completion of the process as well as its visibility.
 
-- **Src**: [./src/examples/off-screen-notification](./src/examples/off-screen-notification)
-- **Demo**: https://real-world-xstate.vercel.app/examples/off-screen-notification
+- 🧶 **Src**: [./src/examples/off-screen-notification](./src/examples/off-screen-notification)
+- 🕹️ **Demo**: https://real-world-xstate.vercel.app/examples/off-screen-notification
