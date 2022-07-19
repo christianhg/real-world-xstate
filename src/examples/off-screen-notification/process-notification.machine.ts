@@ -1,5 +1,5 @@
 import { ActorRefFrom, assign, createMachine, spawn } from 'xstate';
-import { visibilityMachine } from '../../generic-machines/visibility.machine';
+import { visibilityMachine } from './visibility.machine';
 
 export const processNotificationMachine = createMachine(
 	{
