@@ -9,7 +9,9 @@
 		"preview": "vite preview",
 		"format": "prettier --write .",
 		"format:check": "prettier --check .",
-		"postinstall": "xstate typegen \"./src/**/*.ts?(x)\""
+		"postinstall": "xstate typegen \"./src/**/*.ts?(x)\"",
+		"test": "vitest run",
+		"test:watch": "vitest watch"
 	},
 	"dependencies": {
 		"@xstate/react": "^3.0.1",
@@ -23,8 +25,10 @@
 		"@types/react-dom": "^18.0.10",
 		"@vitejs/plugin-react": "^2.2.0",
 		"@xstate/cli": "^0.2.1",
+		"p-defer": "^4.0.0",
 		"prettier": "^2.8.2",
 		"typescript": "^4.9.4",
-		"vite": "^3.2.5"
+		"vite": "^3.2.5",
+		"vitest": "^0.26.3"
 	}
 }
