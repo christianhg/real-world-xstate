@@ -3,6 +3,8 @@ import { createMachine } from 'xstate';
 export const visibilityMachine = createMachine(
 	{
 		id: 'visibility',
+		predictableActionArguments: true,
+		preserveActionOrder: true,
 		tsTypes: {} as import('./visibility.machine.typegen').Typegen0,
 		schema: {
 			context: {} as { element: () => Element | null },

@@ -4,6 +4,8 @@ import { visibilityMachine } from './visibility.machine';
 export const processNotificationMachine = createMachine(
 	{
 		id: 'off-screen notification',
+		predictableActionArguments: true,
+		preserveActionOrder: true,
 		initial: 'notification pending',
 		schema: {
 			context: {} as {

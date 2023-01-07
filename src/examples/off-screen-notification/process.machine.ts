@@ -2,6 +2,8 @@ import { createMachine } from 'xstate';
 
 export const processMachine = createMachine({
 	id: 'process',
+	predictableActionArguments: true,
+	preserveActionOrder: true,
 	tsTypes: {} as import('./process.machine.typegen').Typegen0,
 	initial: 'idle',
 	states: {
