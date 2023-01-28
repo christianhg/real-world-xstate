@@ -28,4 +28,4 @@ On a page with a long-running process, we needed to show a notification to the u
 
 - [ ] Add more examples
 - [ ] Scope the CSS for each example
-- [ ] Create minimal landing page
+- [x] Create minimal landing page
