@@ -24,6 +24,25 @@ On a page with a long-running process, we needed to show a notification to the u
 - 🧶 **Src**: [./src/examples/off-screen-notification](./src/examples/off-screen-notification)
 - 🕹️ **Demo**: https://real-world-xstate.vercel.app/examples/off-screen-notification
 
+## Development
+
+Prerequisites:
+
+- `node`: https://nodejs.org/
+- `pnpm`: https://pnpm.io/
+
+Run the app locally on http://localhost:5173/
+
+```
+pnpm dev
+```
+
+Run Storybook on http://localhost:6006/
+
+```
+pnpm storybook
+```
+
 ## To-do
 
 - [ ] Add more examples
