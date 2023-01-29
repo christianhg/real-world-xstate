@@ -24,7 +24,7 @@ export const FeedbackForm = ({ state }: { state: FeedbackFormState }) => {
 					</button>
 					<button
 						onClick={() => {
-							state.dismiss();
+							state.skip();
 						}}
 					>
 						Skip
@@ -77,7 +77,7 @@ export const FeedbackForm = ({ state }: { state: FeedbackFormState }) => {
 						</button>
 						<button
 							onClick={() => {
-								state.dismiss();
+								state.skip();
 							}}
 						>
 							Skip

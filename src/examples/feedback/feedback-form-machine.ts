@@ -9,7 +9,7 @@ type Context = {
 };
 
 type MachineEvent =
-	| { type: 'dismiss' }
+	| { type: 'skip' }
 	| { type: 'select rating'; rating: number }
 	| { type: 'send'; feedbackText: string };
 
@@ -40,7 +40,7 @@ export function createFeedbackFormMachine({
 		doneDelay: number;
 	};
 	on: {
-		failedToDismissFeedback: () => void;
+		failedToSkipFeedback: () => void;
 		failedToSendFeedback: () => void;
 	};
 }) {
@@ -60,8 +60,8 @@ export function createFeedbackFormMachine({
 							'select rating': {
 								target: 'rating selected',
 							},
-							dismiss: {
-								target: 'done.dismissed',
+							skip: {
+								target: 'done.skipped',
 							},
 						},
 					},
@@ -73,8 +73,8 @@ export function createFeedbackFormMachine({
 								target: 'rating selected',
 								internal: false,
 							},
-							dismiss: {
-								target: 'done.dismissed',
+							skip: {
+								target: 'done.skipped',
 							},
 							send: {
 								target: 'sending',
@@ -110,13 +110,13 @@ export function createFeedbackFormMachine({
 					done: {
 						entry: 'notify parent of completion',
 						states: {
-							dismissed: {
+							skipped: {
 								type: 'final',
 								invoke: {
-									src: 'dismissFeedback',
+									src: 'skipFeedback',
 									onError: [
 										{
-											actions: 'notify failed to dismiss',
+											actions: 'notify failed to skip',
 										},
 									],
 								},
@@ -135,7 +135,7 @@ export function createFeedbackFormMachine({
 							event.type === 'select rating' ? event.rating : context.rating,
 					}),
 					'notify failed to send': () => on.failedToSendFeedback(),
-					'notify failed to dismiss': () => on.failedToDismissFeedback(),
+					'notify failed to skip': () => on.failedToSkipFeedback(),
 					'notify parent of completion': sendParent({
 						type: 'form completed',
 					}),
@@ -144,7 +144,7 @@ export function createFeedbackFormMachine({
 					'done delay': delays.doneDelay,
 				},
 				services: {
-					dismissFeedback: () => api.skip(),
+					skipFeedback: () => api.skip(),
 					sendFeedback: (context, event) => {
 						if (event.type !== 'send' || context.rating === undefined) {
 							return Promise.reject();

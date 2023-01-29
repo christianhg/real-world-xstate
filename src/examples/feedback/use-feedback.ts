@@ -12,14 +12,14 @@ export type FeedbackFormState =
 	| {
 			name: 'idle';
 			selectRating: (rating: number) => void;
-			dismiss: () => void;
+			skip: () => void;
 	  }
 	| {
 			name: 'rating selected';
 			rating: number;
 			selectRating: (rating: number) => void;
 			send: (feedbackText: string) => void;
-			dismiss: () => void;
+			skip: () => void;
 	  }
 	| { name: 'sending' }
 	| { name: 'sent' };
@@ -33,7 +33,7 @@ export function useFeedback(): FeedbackState {
 			},
 			delays: { doneDelay: 4000 },
 			on: {
-				failedToDismissFeedback: () => {},
+				failedToSkipFeedback: () => {},
 				failedToSendFeedback: () => {},
 			},
 		}),
@@ -75,8 +75,8 @@ function getFeedbackFormState(
 			selectRating: (rating) => {
 				formRef.send({ type: 'select rating', rating });
 			},
-			dismiss: () => {
-				formRef.send('dismiss');
+			skip: () => {
+				formRef.send('skip');
 			},
 		};
 	}
@@ -88,8 +88,8 @@ function getFeedbackFormState(
 			selectRating: (rating) => {
 				formRef.send({ type: 'select rating', rating });
 			},
-			dismiss: () => {
-				formRef.send('dismiss');
+			skip: () => {
+				formRef.send('skip');
 			},
 			send: (feedbackText) => {
 				formRef.send({ type: 'send', feedbackText });

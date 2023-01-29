@@ -10,7 +10,7 @@ export const Idle = () => {
 	return (
 		<div style={{ maxWidth: '300px' }}>
 			<FeedbackForm
-				state={{ name: 'idle', selectRating: () => {}, dismiss: () => {} }}
+				state={{ name: 'idle', selectRating: () => {}, skip: () => {} }}
 			/>
 		</div>
 	);
@@ -24,7 +24,7 @@ export const RatingSelected = () => {
 					name: 'rating selected',
 					rating: 10,
 					selectRating: () => {},
-					dismiss: () => {},
+					skip: () => {},
 					send: () => {},
 				}}
 			/>
