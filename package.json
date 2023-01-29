@@ -12,6 +12,8 @@
 		"postinstall": "xstate typegen \"./src/**/*.ts?(x)\"",
 		"test": "vitest run",
 		"test:watch": "vitest watch",
+		"type-check": "tsc --pretty --noEmit",
+		"type-check:watch": "tsc --pretty --noEmit --watch",
 		"storybook": "start-storybook -p 6006",
 		"build-storybook": "build-storybook"
 	},
