@@ -28,13 +28,29 @@ export function useFeedbackState(): FeedbackState {
 	const [state, send] = useMachine(() =>
 		createFeedbackMachine({
 			api: {
-				skip: () => wait(1000),
-				send: () => wait(1000),
+				skip: async () => {
+					// Store skip action on the back end so we don't show the form again.
+					console.info('Feedback skipped');
+					await wait(1000);
+				},
+				send: async (payload) => {
+					// Store feedback on the back end.
+					console.info(
+						`Feedback given: "${payload.feedbackText}" (${payload.rating})`,
+					);
+					await wait(1000);
+				},
 			},
 			delays: { doneDelay: 4000 },
 			on: {
-				failedToSkipFeedback: () => {},
-				failedToSendFeedback: () => {},
+				failedToSkipFeedback: () => {
+					// We didn't create an explicit fail state since feedback collection
+					// isn't so important. Perhaps trigger a small toaster error message
+					// using this callback?
+				},
+				failedToSendFeedback: () => {
+					// Same as above.
+				},
 			},
 		}),
 	);
