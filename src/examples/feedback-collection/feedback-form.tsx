@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FeedbackFormState } from './use-feedback';
+import { FeedbackFormState } from './feedback-state';
 
 export const FeedbackForm = ({ state }: { state: FeedbackFormState }) => {
 	const [feedbackText, setFeedbackText] = useState('');

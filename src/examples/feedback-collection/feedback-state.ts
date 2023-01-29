@@ -24,7 +24,7 @@ export type FeedbackFormState =
 	| { name: 'sending' }
 	| { name: 'sent' };
 
-export function useFeedback(): FeedbackState {
+export function useFeedbackState(): FeedbackState {
 	const [state, send] = useMachine(() =>
 		createFeedbackMachine({
 			api: {
