@@ -19,6 +19,7 @@ export const FeedbackForm = ({ state }: { state: FeedbackFormState }) => {
 				<div className="stack-vertical">
 					<Header />
 					<button
+						autoFocus
 						onClick={() => {
 							state.selectRating(10);
 						}}
@@ -67,6 +68,7 @@ export const FeedbackForm = ({ state }: { state: FeedbackFormState }) => {
 							No good!
 						</button>
 						<input
+							autoFocus
 							placeholder={
 								state.rating > 5
 									? 'Tell us why you love it'
