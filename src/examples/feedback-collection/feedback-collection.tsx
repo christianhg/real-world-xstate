@@ -1,7 +1,7 @@
 import { FeedbackForm } from './feedback-form';
 import { useFeedback } from './use-feedback';
 
-export const Feedback = () => {
+export const FeedbackCollection = () => {
 	const feedbackState = useFeedback();
 
 	return (

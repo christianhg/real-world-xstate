@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './index.css';
 import OffScreenNotification from './examples/off-screen-notification/off-screen-notification';
-import { Feedback } from './examples/feedback/feedback';
+import { FeedbackCollection } from './examples/feedback-collection/feedback-collection';
 import { Landing } from './landing';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
@@ -15,7 +15,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 					path="examples/off-screen-notification"
 					element={<OffScreenNotification />}
 				/>
-				<Route path="examples/feedback" element={<Feedback />} />
+				<Route path="examples/feedback" element={<FeedbackCollection />} />
 			</Routes>
 		</BrowserRouter>
 	</React.StrictMode>,
