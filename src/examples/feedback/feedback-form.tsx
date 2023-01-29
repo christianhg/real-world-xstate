@@ -4,10 +4,20 @@ import { FeedbackFormState } from './use-feedback';
 export const FeedbackForm = ({ state }: { state: FeedbackFormState }) => {
 	const [feedbackText, setFeedbackText] = useState('');
 
+	const Header = () => (
+		<>
+			<p>
+				<strong>Rate our app</strong>
+			</p>
+			<p>Please take a moment and tell us what you think.</p>
+		</>
+	);
+
 	if (state.name === 'idle') {
 		return (
 			<div className="card">
 				<div className="stack-vertical">
+					<Header />
 					<button
 						onClick={() => {
 							state.selectRating(10);
@@ -38,6 +48,7 @@ export const FeedbackForm = ({ state }: { state: FeedbackFormState }) => {
 		return (
 			<div className="card">
 				<div className="stack-vertical">
+					<Header />
 					<div className="stack-vertical">
 						<button
 							disabled={state.rating === 10}
