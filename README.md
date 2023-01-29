@@ -10,7 +10,7 @@ You might also be interested in [xstate-catalogue.com](https://xstate-catalogue.
 
 ## Examples
 
-### 💬 Collecting feedback
+### 💬 Collecting Feedback
 
 A pure-UI feedback form driven by a state machine.
 
